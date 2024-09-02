@@ -38,7 +38,11 @@ Create a new repository화면에서 `Repository name*`란에 원하는 Repositor
 
 ![](./img/make_repository5.png)
 
+해당 원격 저장소와 연결할 지역 저장소를 만들기 위해 `Git Bash`를 실행한다.
 
+윈도우 시작 버튼 - 모든 앱 - `Git` - `Git Bash`
+
+![](./img/how2run_git.png)
 
 ```bash
 thumb@nt930 MINGW64 ~

@@ -36,7 +36,7 @@ Create a new repository화면에서 `Repository name*`란에 원하는 Repositor
 
 `Public` 과 `Private`중에서는 `Public`을 선택해야 Github를 무료로 이용할 수 있다. 
 
-`Add a README file`,` Add .gitignore`,` Choose a license`는 일단 그대로 두고, 화면 하단의 **`Create Repository`**버튼을 클릭한다. 
+`Add a README file`,` Add .gitignore`,` Choose a license`는 일단 그대로 두고, 화면 하단의 `Create Repository`버튼을 클릭한다. 
 
 ![](./img/make_repository4.png)
 
