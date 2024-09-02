@@ -18,7 +18,7 @@
 
 [Note Pad++ 다운로드](https://notepad-plus-plus.org/downloads/)
 
-
+**새로운 원격 저장소(Repository) 생성**
 
 원격 저장소(Repository)를 만들기 위해 웹브라우저에서 자신의 Github계정을 열고, 화면 상단의 `Repositories`메뉴를 클릭한다.
 
@@ -191,7 +191,7 @@ $
 
 앞서 새로만든 Repository화면에서 알아둔 Repository URL을 이용해 원격 저장소와 지역 저장소를 연결하기 위해 `git remote add origin https://github.com/greattoe/how2git.git`명령을 실행한다.
 
-```
+```bash
 thumb@nt930 MINGW64 ~/how2git (master)
 $ git remote add origin https://github.com/greattoe/how2git.git
 
@@ -201,7 +201,7 @@ $
 
 다시 지역 저장소(현재 폴더)와 원격저장소(Github Repository)의 연결상태 확인을 위해 `git remote -v`명령을 실행한다.
 
-```
+```bash
 thumb@nt930 MINGW64 ~/how2git (master)
 $ git remote -v
 origin  https://github.com/greattoe/how2git.git (fetch)
@@ -215,7 +215,92 @@ $
 
 이제 Github와 연동시킬 데이터를 지역 저장소에 복사한다.
 
+추가된 파일을 `add`시키기 위해 `git add --all`명령을 실행한다.
 
+```bash
+thumb@nt930 MINGW64 ~/how2git (master)
+$ git add --all
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'md/how2use_git4windows.md', LF will be replaced by CRLF the next time Git touches it
+
+thumb@nt930 MINGW64 ~/how2git (master)
+$
+```
+
+변경사항을 `commit`시키기 위해 `git commit`명령을 실행하면 다음과 같은 메세지가 출력되고,
+
+```
+thumb@nt930 MINGW64 ~/how2git (master)
+$ git commit
+hint: Waiting for your editor to close the file...
+```
+
+Git 설치 시 커밋 메세지 편집기로 등록한 `Note Pad++`가 자동실행됨과 동시에 자동으로 생성된 커밋 메세지를 보여준다. 이 커밋 메세지 중 저장할 행들은 첫 칸의 `#`을 삭제 하고 저장한 후, `Note Pad++`를 종료하면 커밋이 완료된다. 
+
+```
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+ On branch master
+
+ Initial commit
+
+ Changes to be committed:
+	new file:   README.md
+	new file:   md/how2use_git4windows.md
+	new file:   md/img/downlod_git4win.png
+	new file:   md/img/how2run_git.png
+	new file:   md/img/make_repository1.png
+	new file:   md/img/make_repository2.png
+	new file:   md/img/make_repository3.png
+	new file:   md/img/make_repository4.png
+	new file:   md/img/make_repository5.png
+	new file:   md/img/new.png
+```
+
+커밋이 완료되면 다음과 같은 내용이 화면에 출력된다. 
+
+```bash
+thumb@nt930 MINGW64 ~/how2git (master)
+$ git commit
+[master (root-commit) 74408f1]  Changes to be committed:        new file:   README.md   new file:   md/how2use_git4windows.md   new file:   md/img/downlod_git4win.png  new file:   md/img/how2run_git.png      new file:   md/img/make_repository1.png         new file:   md/img/make_repository2.png         new file:   md/img/make_repository3.png         new file:   md/img/make_repository4.png        new file:   md/img/make_repository5.png  new file:   md/img/new.png
+ 10 files changed, 246 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 md/how2use_git4windows.md
+ create mode 100644 md/img/downlod_git4win.png
+ create mode 100644 md/img/how2run_git.png
+ create mode 100644 md/img/make_repository1.png
+ create mode 100644 md/img/make_repository2.png
+ create mode 100644 md/img/make_repository3.png
+ create mode 100644 md/img/make_repository4.png
+ create mode 100644 md/img/make_repository5.png
+ create mode 100644 md/img/new.png
+
+thumb@nt930 MINGW64 ~/how2git (master)
+$
+```
+
+지역 저장소의 변경된 내용을 원격 저장소에 반영하기 위해 `git push origin --all`명령을 실행한다. 이 때  Github에 로그인되어 있지 않을 경우 로그인 창이 나타나 Password입력을 요구할 수 있다.
+
+```bash
+thumb@nt930 MINGW64 ~/how2git (master)
+$ git push origin --all
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.43 MiB | 1.43 MiB/s, done.
+Total 14 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/greattoe/how2git.git
+ * [new branch]      master -> master
+
+thumb@nt930 MINGW64 ~/how2git (master)
+$
+```
+
+`git push`명령 실행 후 웹브라우저에서 원격 저장소 URL을 열어보면 변경사항이 반영된 것을 확인할 수 있다. 
+
+![](./img\after_push.png)
 
 
 
