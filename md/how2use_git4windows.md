@@ -24,9 +24,7 @@
 
 ![](D:\Dropbox\myGit\how2git\md\img\make_repository1.png)
 
-![](./img/new.png)버튼을 클릭한다.
-
-
+`Repositories`화면 우측 상단의 ![](./img/new.png)버튼을 클릭한다.
 
 ![](./img/make_repository2.png)
 
