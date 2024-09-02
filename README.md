@@ -10,7 +10,7 @@
 
 
 
-[**2. Ubuntu에서의 Github 활용**](./md/install_mysql.md)
+[**2. Ubuntu에서의 Github 활용**](./md/how2use_git4ubuntu.md)
 
 
 
