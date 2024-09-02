@@ -24,7 +24,7 @@
 
 ![](D:\Dropbox\myGit\how2git\md\img\make_repository1.png)
 
-Repositories화면 우측 상단의 <img src="./img\new.png" style="zoom:50%;" />버튼을 클릭한다.
+Repositories화면 우측 상단의 <img src="./img\new.png" style="zoom:25%;" />버튼을 클릭한다.
 
 
 
