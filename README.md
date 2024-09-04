@@ -1,4 +1,4 @@
-## Git & Github 사용법
+## Git & Github 메뉴얼
 
 윈도우 환경과 우분투 환경에서의 Github 사용법
 
