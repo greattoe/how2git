@@ -312,6 +312,12 @@ git config --global credential.helper manager
 
 
 
+```
+ git config --global --unset-all credential.helper
+```
+
+
+
 
 
 
