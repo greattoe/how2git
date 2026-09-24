@@ -192,17 +192,14 @@ $
 앞서 새로만든 Repository화면에서 알아둔 Repository URL을 이용해 원격 저장소와 지역 저장소를 연결하기 위해 `git remote add origin https://github.com/greattoe/how2git.git`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git remote add origin https://github.com/greattoe/how2git.git
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
 다시 지역 저장소(현재 폴더)와 원격저장소(Github Repository)의 연결상태 확인을 위해 `git remote -v`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 /d/Dropbox/myGit/how2git (master)
 $ git remote -v
 origin  https://github.com/greattoe/how2git.git (fetch)
 origin  https://github.com/greattoe/how2git.git (push)
@@ -216,19 +213,16 @@ $
 추가된 파일을 `add`시키기 위해 `git add --all`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git add --all
 warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'md/how2use_git4windows.md', LF will be replaced by CRLF the next time Git touches it
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
 변경사항을 `commit`시키기 위해 `git commit`명령을 실행하면 다음과 같은 메세지가 출력되고,
 
 ```
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git commit
 hint: Waiting for your editor to close the file...
 ```
@@ -259,7 +253,6 @@ Git 설치 시 커밋 메세지 편집기로 등록한 `Note Pad++`가 자동실
 커밋이 완료되면 다음과 같은 내용이 화면에 출력된다. 
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git commit
 [master (root-commit) 74408f1]  Changes to be committed:        new file:   README.md   new file:   md/how2use_git4windows.md   new file:   md/img/downlod_git4win.png  new file:   md/img/how2run_git.png      new file:   md/img/make_repository1.png         new file:   md/img/make_repository2.png         new file:   md/img/make_repository3.png         new file:   md/img/make_repository4.png        new file:   md/img/make_repository5.png  new file:   md/img/new.png
  10 files changed, 246 insertions(+)
@@ -273,15 +266,12 @@ $ git commit
  create mode 100644 md/img/make_repository4.png
  create mode 100644 md/img/make_repository5.png
  create mode 100644 md/img/new.png
-
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
 지역 저장소의 변경된 내용을 원격 저장소에 반영하기 위해 `git push origin --all`명령을 실행한다. 이 때  Github에 로그인되어 있지 않을 경우 로그인 창이 나타나 Password입력을 요구할 수 있다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git push origin --all
 Enumerating objects: 14, done.
 Counting objects: 100% (14/14), done.
@@ -302,10 +292,18 @@ $
 
 
 
+` credential.helper`인증 도우미 설정 확인 명령
 
 
 ```
-git config --global credential.helper manager
+ $ git config --show-origin --get-all credential.helper
+```
+
+
+
+
+```
+
 ```
 
 
