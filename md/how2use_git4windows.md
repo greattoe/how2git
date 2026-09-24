@@ -12,13 +12,13 @@
 
 ![](./img/downlod_git4win.png)
 
-- **Note Pad++ 설치**
+#### 1.2 Note Pad++ 설치
 
 다운로드한 git을 설치하기 앞서 커밋 메세지 편집기로 사용할 `Note Pad ++`를 설치한다. 미리 설치해 두면 Git 설치 과정 중 커밋 메세지 편집기를 선택하는 과정에서 `vi`나 `vim`같은 사용법이 까다로운 편집기 대신 `Note Pad++`를 선택할 수 있다. 아래 다운로드 링크에서 다운로드하여 설치한다. 
 
 [Note Pad++ 다운로드](https://notepad-plus-plus.org/downloads/)
 
-**새로운 원격 저장소(Repository) 생성**
+#### 1.3 새로운 원격 저장소(Remote Repository) 생성
 
 원격 저장소(Repository)를 만들기 위해 웹브라우저에서 자신의 Github계정을 열고, 화면 상단의 `Repositories`메뉴를 클릭한다.
 
@@ -44,7 +44,9 @@ Create a new repository화면에서 `Repository name*`란에 원하는 Repositor
 
 ![](./img/make_repository5.png)
 
-해당 원격 저장소와 연결할 지역 저장소를 만들기 위해 `Git Bash`를 실행한다.
+#### 1.4 지역 저장소(Local Repository) 생성 및 원격 저장소(Remote Repository)와의 연결
+
+`Git Bash`를 실행
 
 윈도우 시작 버튼 - 모든 앱 - `Git` - `Git Bash`
 
@@ -200,12 +202,10 @@ $
 다시 지역 저장소(현재 폴더)와 원격저장소(Github Repository)의 연결상태 확인을 위해 `git remote -v`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
+thumb@nt930 MINGW64 /d/Dropbox/myGit/how2git (master)
 $ git remote -v
 origin  https://github.com/greattoe/how2git.git (fetch)
 origin  https://github.com/greattoe/how2git.git (push)
-
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
@@ -299,6 +299,18 @@ $
 `git push`명령 실행 후 웹브라우저에서 원격 저장소 URL을 열어보면 변경사항이 반영된 것을 확인할 수 있다. 
 
 ![](./img\after_push.png)
+
+
+
+
+
+```
+git config --global credential.helper manager
+```
+
+
+
+
 
 
 
