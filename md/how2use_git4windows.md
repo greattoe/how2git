@@ -269,24 +269,36 @@ $ git commit
 $
 ```
 
-지역 저장소의 변경된 내용을 원격 저장소에 반영하기 위해 `git push origin --all`명령을 실행한다. 이 때  Github에 로그인되어 있지 않을 경우 로그인 창이 나타나 Password입력을 요구할 수 있다.
+지역 저장소의 변경된 내용을 원격 저장소에 반영하기 위해 `git push origin --all`명령을 실행한다. 이 때 아래와 같이 github username 입력을 요구 받게된다.
 
-```bash
-$ git push origin --all
-Enumerating objects: 14, done.
-Counting objects: 100% (14/14), done.
-Delta compression using up to 16 threads
-Compressing objects: 100% (14/14), done.
-Writing objects: 100% (14/14), 1.43 MiB | 1.43 MiB/s, done.
-Total 14 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/greattoe/how2git.git
- * [new branch]      master -> master
-
-thumb@nt930 MINGW64 ~/how2git (master)
-$
+```
+ git push origin --all
+Username for 'https://github.com':
 ```
 
-`git push`명령 실행 후 웹브라우저에서 원격 저장소 URL을 열어보면 변경사항이 반영된 것을 확인할 수 있다. 
+github username을 입력하면 다음과 같이 Password 입력을 요구 받게 된다.  이 때 앞서 발급받은 PAT(Personal Access Token)을 입력한다.
+
+```
+Username for 'https://github.com': greattoe
+Password for 'https://greattoe@github.com':
+```
+
+```
+Password for 'https://greattoe@github.com':
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 753 bytes | 753.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/greattoe/how2git.git
+   6f59840..3e19315  master -> master
+```
+
+
+
+이제 웹브라우저에서 github의 해당 repository의 URL을 열어보면 `git push`명령이 반영된 것을 확인할 수 있다.
 
 ![](./img\after_push.png)
 
