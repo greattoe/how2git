@@ -344,18 +344,18 @@ To https://github.com/greattoe/how2git.git
 ` credential.helper`인증 도우미 설정 확인 명령
 
 
-```
+```bash
 git config --show-scope --show-origin --get-all credential.helper
 ```
 
-```
+```bash
 system  file:C:/Program Files/Git/etc/gitconfig manager
 global  file:C:/Users/thumb/.gitconfig
 ```
 
-위 결과는 ` credential.helper`인증 도우미 설정이 없다는 의미이다. username/pat를 모두 입력해줘야 함.
+위 결과는 ` credential.helper`인증 도우미 설정이 없다는 의미이다. username/PAT를 모두 입력해줘야 함.
 
-```
+```bash
 git config --global credential.helper manager
 ```
 
@@ -363,7 +363,7 @@ git config --global credential.helper manager
 
 ` credential.helper`인증 도우미 설정
 
-```
+```bash
  git config --global --unset-all credential.helper
 ```
 
@@ -371,11 +371,11 @@ git config --global credential.helper manager
 
 ` credential.helper`인증 도우미 설정 확인
 
-```
+```bash
 git config --show-scope --show-origin --get-all credential.helper
 ```
 
-```
+```bash
 
 system  file:C:/Program Files/Git/etc/gitconfig manager
 global  file:C:/Users/thumb/.gitconfig  manager
@@ -383,7 +383,55 @@ global  file:C:/Users/thumb/.gitconfig  manager
 
 
 
+이 후로는 `git push`명령 실행 시 [username]과 PAT(Personal Access Token)이 자동 입력된다. 
 
+
+
+는 다음 명령으로 ` credential.helper`인증 도우미 설정을 해제할 수 있다.
+
+```bash
+git config --global credential.helper ""
+```
+
+
+
+모든 설정 확인
+
+```bash
+git config --show-scope --show-origin --list
+```
+
+```bash
+git config --show-scope --show-origin --list
+system  file:C:/Program Files/Git/etc/gitconfig diff.astextplain.textconv=astextplain
+system  file:C:/Program Files/Git/etc/gitconfig filter.lfs.clean=git-lfs clean -- %f
+system  file:C:/Program Files/Git/etc/gitconfig filter.lfs.smudge=git-lfs smudge -- %f
+system  file:C:/Program Files/Git/etc/gitconfig filter.lfs.process=git-lfs filter-process
+system  file:C:/Program Files/Git/etc/gitconfig filter.lfs.required=true
+system  file:C:/Program Files/Git/etc/gitconfig http.sslbackend=openssl
+system  file:C:/Program Files/Git/etc/gitconfig http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+system  file:C:/Program Files/Git/etc/gitconfig core.autocrlf=true
+system  file:C:/Program Files/Git/etc/gitconfig core.fscache=true
+system  file:C:/Program Files/Git/etc/gitconfig core.symlinks=false
+system  file:C:/Program Files/Git/etc/gitconfig core.editor="C:\\Program Files\\Notepad++\\notepad++.exe" -multiInst -notabbar -nosession -noPlugin
+system  file:C:/Program Files/Git/etc/gitconfig pull.rebase=false
+system  file:C:/Program Files/Git/etc/gitconfig credential.helper=manager
+system  file:C:/Program Files/Git/etc/gitconfig credential.https://dev.azure.com.usehttppath=true
+system  file:C:/Program Files/Git/etc/gitconfig init.defaultbranch=master
+global  file:C:/Users/thumb/.gitconfig  user.name=greattoe
+global  file:C:/Users/thumb/.gitconfig  user.email=greattoe@gmail.com
+local   file:.git/config        core.repositoryformatversion=0
+local   file:.git/config        core.filemode=false
+local   file:.git/config        core.bare=false
+local   file:.git/config        core.logallrefupdates=true
+local   file:.git/config        core.symlinks=false
+local   file:.git/config        core.ignorecase=true
+local   file:.git/config        remote.origin.url=https://github.com/greattoe/how2git.git
+local   file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+(END)
+```
+
+위 출력을 종료하려면 'q'를 입력한다.
 
 
 
