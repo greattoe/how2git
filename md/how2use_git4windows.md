@@ -44,7 +44,47 @@ Create a new repository화면에서 `Repository name*`란에 원하는 Repositor
 
 ![](./img/make_repository5.png)
 
-#### 1.4 지역 저장소(Local Repository) 생성 및 원격 저장소(Remote Repository)와의 연결
+
+
+#### 1.4 PAT(Personal Access Token) 발급
+
+**GitHub**의 **2021년 8월 13일부터 Git 작업에서 HTTPS 계정 비밀번호 인증 중단**으로 인증방식이 Username/Password에서 Username/PAT으로 변경되어 PAT을 발급받아야 한다.
+
+자신의 깃허브 계정에 로그인 후, 웹브라우저에서 URL:https// github.com/[username] 을열고, 사용자 설정을 클릭한다.
+
+![](./img/user_settings.png)
+
+사용자 설정(user settings)화면 좌측 하단의 개발자 설정(Developer settings)을 클릭한다.
+
+![](./img/developer_settings.png)
+
+Personal Access Token - Tokens(Classic) 클릭
+
+![](./img/personal_access_token_classic.png)
+
+[Generate new token] 버튼을 클릭하여 나타나느메뉴에서 Generate new token(classic)을 선택한다.
+
+![](./img/generate_new_token_classic.png)
+
+새로 생성될 토큰에 대한 메모, 유효기간 등을 설정한다. Note는 비워 두어도 상관 없다.
+
+![](./img/new_pat_classic_note_exiration.png)
+
+새로 생성될 토큰의 효력 범위를 지정한다. 적어도 첫 줄의 [repo]에는 체크해야만한다.
+
+![](./img/new_pat_classic_scope.png)
+
+페이지 최 하단으로 스크롤 하여 [Generate token] 버튼을 클릭한다.
+
+![](./img/generate token.png)
+
+빨간 네모로 표시한 문자열이 생성된 토큰이다. ![](./img/copy.png)를 클릭하여 복사 후 자신의 EMAIL로 전송해두자.
+
+![](./img/generated_token.png)
+
+
+
+#### 1.5 지역 저장소(Local Repository) 생성 및 원격 저장소(Remote Repository)와의 연결
 
 `Git Bash`를 실행
 
@@ -112,32 +152,27 @@ $
 
 현재 경로에는 `.git`디렉토리(폴더)가 없다. 현재 작업 경로를 Github와 연동하기 위해 `git init`명령을 실행한다.
 
-```
-thumb@nt930 MINGW64 ~/how2git
+```bash
 $ git init
 Initialized empty Git repository in C:/Users/thumb/how2git/.git/
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
 현재 작업 경로에 `.git`폴더의 존재 여부 확인을 위해 `ls -d .git`명령을 실행한다.
 
-```
+```bash
 ls -d .git
 .git/
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
 Github 로그인 시 사용하는 E-Mail 설정을 위해 `git config --global user.email "[user email]"`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git config --global user.email "greattoe@gmail.com"
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
@@ -157,35 +192,31 @@ $
 Github 사용자 명 설정을 위해 `git config --global user.name "[user name]"`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git config --global user.name "Lee Yongjin"
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
 Github 사용자 명 설정 확인을 위해 `git config user.name`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git config user.name
 Lee Yongjin
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
 지역 저장소(현재 폴더)와 원격저장소(Github Repository)의 연결상태 확인을 위해 `git remote -v`명령을 실행한다.
 
 ```
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git remote -v
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
-연결된 원격저장소가 없어서 아무것도 출력되지 안는다.
+연결된 원격저장소가 없어서 아무것도 출력되지 않았다.
+
+
 
 ![](./img/make_repository5.png)
 
@@ -301,6 +332,12 @@ To https://github.com/greattoe/how2git.git
 이제 웹브라우저에서 github의 해당 repository의 URL을 열어보면 `git push`명령이 반영된 것을 확인할 수 있다.
 
 ![](./img\after_push.png)
+
+
+
+`git push`명령 실행 시 `username`과 PAT입력을 돕는 `credential.helper`설정을 해 두면 해당 Repository에 대한 `git push`명령 실 행 시 일일이 `username`과 PAT을 입력하지 않아도 된다.
+
+#### 1.6 `credential.helper`  설정
 
 
 
