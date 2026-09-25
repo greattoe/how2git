@@ -345,23 +345,43 @@ To https://github.com/greattoe/how2git.git
 
 
 ```
- $ git config --show-origin --get-all credential.helper
+git config --show-scope --show-origin --get-all credential.helper
+```
+
+```
+system  file:C:/Program Files/Git/etc/gitconfig manager
+global  file:C:/Users/thumb/.gitconfig
+```
+
+위 결과는 ` credential.helper`인증 도우미 설정이 없다는 의미이다. username/pat를 모두 입력해줘야 함.
+
+```
+git config --global credential.helper manager
 ```
 
 
 
-
-```
-
-```
-
-
-
-
+` credential.helper`인증 도우미 설정
 
 ```
  git config --global --unset-all credential.helper
 ```
+
+
+
+` credential.helper`인증 도우미 설정 확인
+
+```
+git config --show-scope --show-origin --get-all credential.helper
+```
+
+```
+
+system  file:C:/Program Files/Git/etc/gitconfig manager
+global  file:C:/Users/thumb/.gitconfig  manager
+```
+
+
 
 
 
