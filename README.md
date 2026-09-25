@@ -2,9 +2,15 @@
 
 ---
 
+**문서작성 환경**
+
+이미 **github**에 가입, 사용자계정을 보유하고 **Micro Soft Windows11** 운영체제가 설치된 PC에서 작업하는 것을 전제
+
+---
 
 
-#### 1.1. Windows용 Git 설치
+
+#### 1. Windows용 Git 설치
 
 [**윈도우용 Git 다운로드**](https://git-scm.com/download/win)
 
@@ -12,17 +18,17 @@
 
 ![](./img/downlod_git4win.png)
 
-#### 1.2 Note Pad++ 설치
+#### 2. Note Pad++ 설치
 
 다운로드한 git을 설치하기 앞서 커밋 메세지 편집기로 사용할 `Note Pad ++`를 설치한다. 미리 설치해 두면 Git 설치 과정 중 커밋 메세지 편집기를 선택하는 과정에서 `vi`나 `vim`같은 사용법이 까다로운 편집기 대신 `Note Pad++`를 선택할 수 있다. 아래 다운로드 링크에서 다운로드하여 설치한다. 
 
 [Note Pad++ 다운로드](https://notepad-plus-plus.org/downloads/)
 
-#### 1.3 새로운 원격 저장소(Remote Repository) 생성
+#### 3. 새로운 원격 저장소(Remote Repository) 생성
 
 원격 저장소(Repository)를 만들기 위해 웹브라우저에서 자신의 Github계정을 열고, 화면 상단의 `Repositories`메뉴를 클릭한다.
 
-![](D:\Dropbox\myGit\how2git\md\img\make_repository1.png)
+![](./img\make_repository1.png)
 
 `Repositories`화면 우측 상단의 ![](./img/new.png)버튼을 클릭한다.
 
@@ -46,7 +52,7 @@ Create a new repository화면에서 `Repository name*`란에 원하는 Repositor
 
 
 
-#### 1.4 PAT(Personal Access Token) 발급
+#### 4. PAT(Personal Access Token) 발급
 
 **GitHub**의 **2021년 8월 13일부터 Git 작업에서 HTTPS 계정 비밀번호 인증 중단**으로 인증방식이 Username/Password에서 Username/PAT으로 변경되어 PAT을 발급받아야 한다.
 
@@ -84,7 +90,7 @@ Personal Access Token - Tokens(Classic) 클릭
 
 
 
-#### 1.5 지역 저장소(Local Repository) 생성 및 원격 저장소(Remote Repository)와의 연결
+#### 5. 지역 저장소(Local Repository) 생성 및 원격 저장소(Remote Repository)와의 연결
 
 `Git Bash`를 실행
 
@@ -93,60 +99,49 @@ Personal Access Token - Tokens(Classic) 클릭
 ![](./img/how2run_git.png)
 
 ```bash
-thumb@nt930 MINGW64 ~
 $
 ```
 
 `pwd`명령`(print working directory)`으로 현재 작업 경로를 확인한다.
 
 ```bash
-thumb@nt930 MINGW64 ~
 $ pwd
-/c/Users/thumb
+/c/Users/user
 
-thumb@nt930 MINGW64 ~
 $
 ```
 
-`pwd`명령의 결과로 `/c/Users/thumb`가 출력되었다. C:드라이브의 Users 폴더의 thumb 폴더가 현재 작업 경로라는 뜻이다. 현재 경로에 원격저장소(Repository) `https://github.com/greattoe/how2git.git`와 연결하여 동기화 시킬 지역 저장소 `how2git` 디렉토리(폴더)를 만들기 위해 `mkdir how2git`명령을 실행한다.
+`pwd`명령의 결과로 `/c/Users/thumb`가 출력되었다. C:드라이브의 Users 폴더의 thumb 폴더가 현재 작업 경로라는 뜻이다. 현재 경로에 원격저장소(Repository) `https://github.com/greattoe/how2git.git`와 연결하여 동기화 시킬 지역 저장소 `how2git` 디렉토리(폴더)를 만들기 위해 `mkdir how2git`명령을 실행 후, `cd how2git`명령을 실행하여 작업경로를 지금 생성한 `how2git`폴더로 변경한다.
 
 ```bash
-thumb@nt930 MINGW64 ~
 $ mkdir how2git
 
-thumb@nt930 MINGW64 ~
-$
+$cd how2git
 ```
 
 `how2git` 디렉토리(폴더) 생성 확인을 위해 `ls -d how2git`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~
 $ ls -d how2git
 how2git/
 
-thumb@nt930 MINGW64 ~
 $
 ```
 
 작업 경로를 `how2git`디렉토리(폴더) 로 변경하기 위해 `cd how2git`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~
 $ cd how2git
 
-thumb@nt930 MINGW64 ~/how2git
 $
 ```
 
 현재 작업 경로에 `.git`폴더의 존재여부 확인을 위해 `ls -d .git`명령을 실행한다.
 
-```
-thumb@nt930 MINGW64 ~/how2git
+```bash
 $ ls -d .git
 ls: cannot access '.git': No such file or directory
 
-thumb@nt930 MINGW64 ~/how2git
 $
 ```
 
@@ -168,7 +163,7 @@ ls -d .git
 $
 ```
 
-Github 로그인 시 사용하는 E-Mail 설정을 위해 `git config --global user.email "[user email]"`명령을 실행한다.
+Github 로그인 시 사용하는 E-Mail 계정 설정을 위해 `git config --global user.email "[user email]"`명령을 실행한다.
 
 ```bash
 $ git config --global user.email "greattoe@gmail.com"
@@ -179,11 +174,9 @@ $
 E-Mail 설정 확인을 위해 `git config user.email`명령을 실행한다.
 
 ```bash
-thumb@nt930 MINGW64 ~/how2git (master)
 $ git config user.email
 greattoe@gmail.com
 
-thumb@nt930 MINGW64 ~/how2git (master)
 $
 ```
 
@@ -192,7 +185,7 @@ $
 Github 사용자 명 설정을 위해 `git config --global user.name "[user name]"`명령을 실행한다.
 
 ```bash
-$ git config --global user.name "Lee Yongjin"
+$ git config --global user.name "greattoe"
 
 $
 ```
@@ -201,7 +194,7 @@ Github 사용자 명 설정 확인을 위해 `git config user.name`명령을 실
 
 ```bash
 $ git config user.name
-Lee Yongjin
+greattoe
 
 $
 ```
@@ -260,7 +253,7 @@ hint: Waiting for your editor to close the file...
 
 Git 설치 시 커밋 메세지 편집기로 등록한 `Note Pad++`가 자동실행됨과 동시에 자동으로 생성된 커밋 메세지를 보여준다. 이 커밋 메세지 중 저장할 행들은 첫 칸의 `#`을 삭제 하고 저장한 후, `Note Pad++`를 종료하면 커밋이 완료된다. 
 
-```
+```bash
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
